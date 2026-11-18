@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exportar tickets a Excel</title>
+
+    <!-- Librería cliente de Trello: nos da t (contexto, token, resize). -->
+    <script src="https://p.trello.com/power-up.min.js"></script>
+
+    <!--
+      SheetJS (xlsx) — generación del .xlsx en el navegador.
+      Versión EXACTA y antigua (0.18.5, publicada 2022) desde cdnjs.
+      No usar "latest" ni rangos: Trello sirve el iframe sin build step.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+        font-size: 14px;
+        color: #172b4d;
+        background: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: #e6e8ea;
+          background: #1d2125;
+        }
+      }
+      button {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background: #0c66e4;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: default;
+      }
+      #status {
+        margin-top: 12px;
+        min-height: 1.2em;
+        white-space: pre-wrap;
+      }
+      .muted {
+        opacity: 0.7;
+      }
+      .error {
+        color: #ca3521;
+      }
+      @media (prefers-color-scheme: dark) {
+        .error {
+          color: #ff9c8f;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button id="generate" type="button">Generar Excel</button>
+    <div id="status" class="muted">
+      Exporta todas las tarjetas del board a un archivo .xlsx.
+    </div>
+
+    <!-- API key compartida (mismo archivo que usa el connector) -->
+    <script src="js/config.js"></script>
+    <script src="js/export.js"></script>
+  </body>
+</html>

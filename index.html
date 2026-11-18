@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IDEAS · Exportar Excel — Trello Power-Up</title>
+    <!--
+      CONNECTOR del Power-Up.
+
+      Trello carga ESTA página en un iframe invisible para descubrir las
+      "capabilities" (en nuestro caso, un board-button). No tiene UI visible:
+      su único trabajo es llamar a TrelloPowerUp.initialize(...).
+
+      La librería cliente DEBE servirse desde el host oficial de Trello.
+      Solo funciona cuando la página se carga dentro del iframe de Trello.
+    -->
+    <script src="https://p.trello.com/power-up.min.js"></script>
+  </head>
+  <body>
+    <!--
+      API key del Power-Up: se edita en js/config.js (un solo lugar).
+      Lo carga también export.html, por eso vive en un archivo compartido.
+    -->
+    <script src="js/config.js"></script>
+
+    <!-- Lógica del connector: initialize + capability board-buttons -->
+    <script src="js/client.js"></script>
+  </body>
+</html>
