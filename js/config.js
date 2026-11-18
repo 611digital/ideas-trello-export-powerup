@@ -11,7 +11,7 @@
  * Lo cargan tanto index.html (connector) como export.html (popup), así que
  * basta cambiarlo UNA vez.
  */
-window.TRELLO_API_KEY = "REEMPLAZAR_CON_TU_API_KEY";
+window.TRELLO_API_KEY = "bcad8b7e579973bdc7369610e7ee1faf";
 
 // Nombre que verá el usuario en la pantalla de autorización de Trello.
 window.TRELLO_APP_NAME = "IDEAS · Exportar Excel";
